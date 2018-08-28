@@ -1,0 +1,31 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+alias tmux="tmux -2"
+
+#alias -s md=vim
+#alias -s txt=vim
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+
+GPG_TTY=$(tty)
+export GPG_TTY
+
+utc () {
+  date -u +%s
+}
+
