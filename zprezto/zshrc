@@ -18,6 +18,8 @@ alias tmux="tmux -2"
 
 #alias -s md=vim
 #alias -s txt=vim
+alias vi=nvim
+alias vim=nvim
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
