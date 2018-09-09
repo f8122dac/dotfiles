@@ -13,8 +13,10 @@ fi
 # Customize to your needs...
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 alias tmux="tmux -2"
+alias vc="veracrypt --text 2>/dev/null"
 
 #alias -s md=vim
 #alias -s txt=vim
