@@ -5,11 +5,23 @@ synclient VertScrollDelta=-200
 synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 $HOME/.screenlayout/1680x1050.sh &
+
 nitrogen --restore &
-polybar example &
+
+#polybar example &
+$HOME/.config/polybar/launch_polybar.sh &
+
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+#bspc monitor -d I II III IV V VI VII VIII IX X
+i=1
+#for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+for m in $(bspc query -M); do
+  bspc monitor $m \
+    -n "$i" \
+    -d $m/{1..5}
+  let i++
+done
 
 bspc config border_width         2
 bspc config window_gap          24
